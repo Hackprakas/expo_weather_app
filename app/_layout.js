@@ -6,7 +6,11 @@ import { StatusBar } from 'react-native';
 export default function Layout() {
   return (<>
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Drawer >
+      <Drawer screenOptions={{headerStyle:{
+        backgroundColor:'#000000',
+      },
+      headerTintColor: '#fff',
+      }} >
         <Drawer.Screen name="index" // This is the name of the page and must match the url from root
           options={{ drawerLabel: 'Home', title:"",drawerActiveBackgroundColor: '#f0f0f0',drawerInactiveBackgroundColor: '#ffffff' }}
           />
@@ -14,7 +18,7 @@ export default function Layout() {
           options={{ drawerLabel: 'something', title:"",drawerActiveBackgroundColor: '#f0f0f0',drawerInactiveBackgroundColor: '#ffffff'}}
           />
       </Drawer>
-      <StatusBar style="white" />
+      <StatusBar barStyle='light-content' />
     </GestureHandlerRootView>
           </>
   );
